@@ -1,10 +1,13 @@
 import styled from "styled-components";
 
 export const QuizStyled = styled.div`
-  width:90%;
+  width: 90%;
   max-width: 600px;
-  background:white;
+  background: white;
   border-radius: 3px;
-  padding:2em;
+  padding: 2em;
   box-shadow: 5px 5px 5px black;
-`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;

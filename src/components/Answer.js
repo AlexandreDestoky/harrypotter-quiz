@@ -1,15 +1,30 @@
 import React, { useContext } from "react";
 import { QuizContext } from "../context/QuizContext";
-import { AnswerListStyled, AnswerStyled } from "./AnswerStyled";
+import { AnswerStyled } from "./Answer.styled";
 
-export default function Answer() {
+export default function Answer(props) {
   const [quizState, dispatch] = useContext(QuizContext);
-  const questions = quizState.data[quizState.currentQuestion - 1].answerOptions;
+
+  const choice = () => {
+    dispatch({ type: "CHOICE", payload: props.children });
+  };
+
+  const currentCorrectAnswer = quizState.data[quizState.currentQuestion - 1].correctAnswer;
+  const correctAnswer = quizState.currentAnswer && props.children === currentCorrectAnswer;
+  const wrongAnswer =
+    quizState.currentAnswer &&
+    props.children !== currentCorrectAnswer &&
+    quizState.currentAnswer === props.children;
+  const disabled = quizState.currentAnswer ? "disabled" : "";
+  const correctAnswerClass = correctAnswer ? "correct" : "";
+  const wrongAnswerClass = wrongAnswer ? "incorrect" : "";
+
   return (
-    <AnswerListStyled>
-      {questions.map((el, i) => (
-        <AnswerStyled key={i}>{el.answerText}</AnswerStyled>
-      ))}
-    </AnswerListStyled>
+    <AnswerStyled
+      onClick={choice}
+      className={`${correctAnswerClass} ${wrongAnswerClass} ${disabled}`}
+    >
+      {props.children}
+    </AnswerStyled>
   );
 }
