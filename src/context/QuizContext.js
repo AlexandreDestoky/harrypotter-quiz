@@ -1,5 +1,5 @@
 import React, { createContext, useReducer } from "react";
-import dataQuiz from "../dataQuiz";
+import dataQuiz from "../shared/dataQuiz";
 
 const initialState = {
   data: dataQuiz,

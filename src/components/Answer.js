@@ -12,9 +12,8 @@ export default function Answer(props) {
   const currentCorrectAnswer = quizState.data[quizState.currentQuestion - 1].correctAnswer;
   const correctAnswer = quizState.currentAnswer && props.children === currentCorrectAnswer;
   const wrongAnswer =
-    quizState.currentAnswer &&
-    props.children !== currentCorrectAnswer &&
-    quizState.currentAnswer === props.children;
+    props.children !== currentCorrectAnswer && quizState.currentAnswer === props.children;
+
   const disabled = quizState.currentAnswer ? "disabled" : "";
   const correctAnswerClass = correctAnswer ? "correct" : "";
   const wrongAnswerClass = wrongAnswer ? "incorrect" : "";

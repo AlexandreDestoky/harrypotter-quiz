@@ -19,9 +19,6 @@ export const AnswerStyled = styled.li`
     opacity: 0.5;
     pointer-events: none;
   }
-  &:hover {
-    background: aliceblue;
-  }
 `;
 
 export const AnswerList = styled.ul`

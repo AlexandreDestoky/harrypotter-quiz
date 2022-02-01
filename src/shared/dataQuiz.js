@@ -15,7 +15,7 @@ const dataQuiz = [
       "Impedimenta, Incarcerous and Incendio",
       "Avada Kedavra, Crucio and Imperio",
       "Expelliarmus, Expecto Patronum and Diffindo",
-      "Aguamenti,Alohomora and Ascendio",
+      "Aguamenti, Alohomora and Ascendio",
     ],
     correctAnswer: "Avada Kedavra, Crucio and Imperio",
   },

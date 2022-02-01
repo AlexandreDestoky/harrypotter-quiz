@@ -1,11 +1,13 @@
-import "./App.css";
+import { Application } from "./App.styled";
 import Quiz from "./components/Quiz";
+import { GlobalStyle } from "./shared/GlobalStyle";
 
 function App() {
   return (
-    <div className="App">
+    <Application>
       <Quiz />
-    </div>
+      <GlobalStyle />
+    </Application>
   );
 }
 
